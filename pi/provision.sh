@@ -85,7 +85,8 @@ pushd "${script_dir}" > /dev/null
     exit 1
   fi
   
-  sudo dd if="./tmp/hypriotos-rpi-v${os_version}.img" of="${sd_device_path}" bs=1M
+  # bs=1M changed to bs=1m for it to work on macOS
+  sudo dd if="./tmp/hypriotos-rpi-v${os_version}.img" of="${sd_device_path}" bs=1m
 
   sleep 5 # give drive time to mount
   os_mount="$(mount | grep "${sd_device_path}.*HypriotOS" | awk '{print $3}')"
