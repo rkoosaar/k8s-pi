@@ -517,7 +517,7 @@ It also includes a tool called `cloud-init` which allows us to specify options l
 static IPs in a config file on the SD card rather than running setup commands over SSH after boot.
 
 Create an SSH key to access the Raspberry Pi's:
-
+(Maybe try ed25519 key?)
 ```
 ssh-keygen -t rsa -b 4096 -C k8s -N '' -f ~/.ssh/id_rsa_k8s
 ssh-add ~/.ssh/id_rsa_k8s
